@@ -1,0 +1,51 @@
+#include <stdio.h>
+
+#include <stdlib.h>
+
+struct Node{int data;struct Node*next;};
+
+struct Node*head=NULL;
+
+void insertEnd(int val){
+
+ struct Node*newNode=malloc(sizeof(struct Node));
+
+ newNode->data=val;newNode->next=NULL;
+
+ if(head==NULL){head=newNode;return;}
+
+ struct Node*t=head;
+
+ while(t->next)t=t->next;
+
+ t->next=newNode;
+
+}
+
+void deleteFront(){
+
+ if(head==NULL)return;
+
+ struct Node*t=head;head=head->next;free(t);
+
+}
+
+void display(){
+
+ struct Node*t=head;while(t){printf("%d ",t->data);t=t->next;}printf("\n");
+
+}
+
+int main(){
+
+ insertEnd(10);insertEnd(20);insertEnd(30);
+
+ display();
+
+ deleteFront();
+
+ display();
+
+ return 0;
+
+}
