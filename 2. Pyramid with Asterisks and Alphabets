@@ -1,0 +1,43 @@
+
+
+#include <stdio.h>
+
+void starPyramid(int n) {
+
+ for(int i=1; i<=n; i++) {
+
+ for(int s=i; s<n; s++) printf(" ");
+
+ for(int j=1; j<=2*i-1; j++) printf("*");
+
+ printf("\n");
+
+ }
+
+}
+
+void alphabetPyramid(int n) {
+
+ char ch='A';
+
+ for(int i=1;i<=n;i++) {
+
+ for(int j=1;j<=i;j++)
+
+ printf("%c ",ch++);
+
+ printf("\n");
+
+ }
+
+}
+
+int main() {
+
+ starPyramid(5);
+
+ alphabetPyramid(5);
+
+ return 0;
+
+}
